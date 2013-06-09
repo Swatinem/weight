@@ -11,7 +11,7 @@ Remember people, this is not Java. Your modules are not supposed to take
 
 ## Installation
 
-    $ npm install weight
+    $ sudo npm install weight -g
 
 ## Usage
 
