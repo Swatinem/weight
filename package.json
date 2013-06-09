@@ -1,0 +1,20 @@
+{
+  "name": "weight",
+  "description": "weight tells you the memory usage and loading time of your module",
+  "version": "0.2.0",
+  "keywords": ["memory usage", "loading time", "light-weight"],
+  "bin": {
+    "weight": "./bin/weight.js",
+    "_weight": "./bin/_weight"
+  },
+  "maintainers": [
+    "Arpad Borsos <arpad.borsos@googlemail.com> (http://swatinem.de)"
+  ],
+  "dependencies": {
+    "bytes": "~ 0.2.1"
+  },
+  "devDependencies": {
+  },
+  "repository": "git://github.com/Swatinem/weight.git",
+  "license": "LGPLv3"
+}

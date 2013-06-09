@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+var bytes = require('bytes');
+
+var path = process.cwd();
+if (process.argv[2]) {
+	if (process.argv[2][0] === '/')
+		path = process.argv[2];
+	else
+		path += '/' + process.argv[2];
+}
+
+gc();
+var before = process.memoryUsage();
+var time = process.hrtime();
+var lib = require(path);
+time = process.hrtime(time);
+gc();
+var after = process.memoryUsage();
+
+var heapDiff = after.heapUsed - before.heapUsed;
+var ns = time[0] * 1e6 + time[1] / 1e3;
+
+console.error('load time: ' + (Math.round(ns) / 1000) + 'ms');
+console.error('js heap usage: ' + bytes(heapDiff));
+
+process.exit();
+
